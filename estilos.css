@@ -1,0 +1,146 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #e6f2ff;
+    max-width: 100%; /* Ajustar a 100% para pantallas móviles */
+    margin: auto;
+    padding: 15px;
+    color: #333;
+    line-height: 1.6;
+}
+
+header {
+    background: linear-gradient(135deg, #63fa9a, #071ef3);
+    color: white;
+    text-align: center;
+    padding: 30px 15px; /* Reducir padding para pantallas pequeñas */
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+header h1 {
+    font-size: 1.8rem; /* Reducir tamaño de fuente */
+    margin-bottom: 8px;
+    animation: fadeInDown 1s ease-in-out;
+}
+
+header p {
+    font-size: 1rem; /* Reducir tamaño de fuente */
+    opacity: 0.9;
+}
+
+h2 {
+    text-align: center;
+}
+
+nav {
+    display: flex;
+    flex-direction: column; /* Mantener en columna para mobile */
+    align-items: center;
+    background-color:#1e3d58;
+    padding: 10px 20px; /* Reducir padding */
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Enlaces de navegación */
+nav a {
+    color: white;
+    text-decoration: none;
+    background-color: #1e5a8a;
+    padding: 12px 15px;  /* Ajustar padding para botones más pequeños */
+    border-radius: 6px;
+    margin: 8px 0; /* Más espacio entre enlaces para mobile */
+    font-size: 1.5rem;  /* Reducir tamaño de fuente */
+    font-weight: 500;
+    transition: background-color 0.3s, transform 0.3s;
+    width: 100%; /* Hacer que los enlaces ocupen el ancho completo */
+    text-align: center; /* Centrar el texto */
+}
+
+nav a:hover {
+    background-color: #3a8fbd;
+    transform: translateY(-2px); 
+}
+
+.card-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Cambiado a flex-start para un mejor alineado vertical */
+    flex-wrap: wrap; /* Permitir que las tarjetas se envuelvan a la siguiente línea */
+    gap: 20px; /* Espacio entre las tarjetas */
+    margin: 40px 0;
+}
+
+.card {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-left: 5px solid #1e5a8a;
+    margin: 20px 10px; /* Margen adicional para dar espacio entre filas */
+    flex: 1 1 300px; /* Base de 300px y que se ajuste según el espacio disponible */
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+}
+
+.card h3 {
+    color: #1e5a8a;
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+}
+
+.card p {
+    color: #333;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.card-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 20px;
+    background-color: #3a8fbd;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.card-button:hover {
+    background-color: #1e3d58;
+}
+
+@media (min-width: 1024px) {
+    nav {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr); 
+        gap: 20px; 
+        padding: 20px 50px;
+    }
+
+    nav a {
+        font-size: 1.2rem;
+        padding: 15px;
+        text-align: center;
+        border-radius: 8px;
+        transition: background-color 0.3s, transform 0.3s;
+    }
+
+    
+}
