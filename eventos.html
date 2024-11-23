@@ -1,12 +1,14 @@
 <!DOCTYPE html>
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Eventos - APP</title>
     <link rel="stylesheet" href="estilos.css">
 </head>
+
 <body>
-    
+
     <header>
         <div class="header-content">
             <img src="logo.png" alt="Logo" class="logo">
@@ -30,19 +32,18 @@
         </ul>
     </nav>
 
-    <section class="card-container">
-        
-        <div class="card">
-            <h2>Proximos Eventos</h2>
-            <ul>
-                <li>Conferencia sobre Agua - 20 Nov 2024</li>
-                <li>Taller de Sostenibilidad - 10 Dic 2024</li>
-                <li>Seminario sobre Gestión de Agua en Comunidades Rurales - 5 Ene 2025</li>
-                <li>Campaña de Reforestación y Conservación de Fuentes de Agua - 15 Feb 2025</li>
-                <li>Foro de Innovación en Energías Renovables y Agua - 22 Mar 2025</li>
-                <li>Exposición de Proyectos de Saneamiento - 30 Abr 2025</li>
-                <li>Feria de Voluntariado y Donaciones - 12 Jun 2025</li>
-                <li>Reunión Anual de la Red de Juntas de Agua - 18 Jul 2025</li>
+    <section class="calendar">
+        <div class="events">
+            <h2>Próximos Eventos</h2>
+            <ul id="event-list">
+                <li data-date="2024-11-20"><strong>Conferencia sobre Agua</strong> - 20 Nov 2024</li>
+                <li data-date="2024-12-10"><strong>Taller de Sostenibilidad</strong> - 10 Dic 2024</li>
+                <li data-date="2025-01-05"><strong>Seminario sobre Gestión de Agua en Comunidades Rurales</strong> - 5 Ene 2025</li>
+                <li data-date="2025-02-15"><strong>Campaña de Reforestación y Conservación de Fuentes de Agua</strong> - 15 Feb 2025</li>
+                <li data-date="2025-03-22"><strong>Foro de Innovación en Energías Renovables y Agua</strong> - 22 Mar 2025</li>
+                <li data-date="2025-04-30"><strong>Exposición de Proyectos de Saneamiento</strong> - 30 Abr 2025</li>
+                <li data-date="2025-06-12"><strong>Feria de Voluntariado y Donaciones</strong> - 12 Jun 2025</li>
+                <li data-date="2025-07-18"><strong>Reunión Anual de la Red de Juntas de Agua</strong> - 18 Jul 2025</li>
             </ul>
         </div>
     </section>
@@ -147,4 +148,5 @@
 
     <script src="script.js"></script>
 </body>
+
 </html>

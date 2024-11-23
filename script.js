@@ -125,3 +125,40 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+
+
+//CALENDARIO
+document.addEventListener("DOMContentLoaded", function () {
+    const events = document.querySelectorAll("#event-list li");
+    const today = new Date();
+
+    // Convertir la fecha en formato "AAAA-MM-DD" a un objeto Date
+    function getDateFromAttr(event) {
+        return new Date(event.getAttribute("data-date"));
+    }
+
+    // Encontrar el evento más cercano
+    let closestEvent = null;
+    let closestDateDiff = Infinity;
+
+    events.forEach(event => {
+        const eventDate = getDateFromAttr(event);
+        const dateDiff = eventDate - today;
+
+        if (dateDiff >= 0 && dateDiff < closestDateDiff) {
+            closestDateDiff = dateDiff;
+            closestEvent = event;
+        }
+
+        // Añadir el evento click para mostrar un mensaje
+        event.addEventListener("click", function () {
+            alert("Seleccionaste: " + event.textContent.trim());
+        });
+    });
+
+    // Resaltar el evento más cercano
+    if (closestEvent) {
+        closestEvent.classList.add("highlight");
+    }
+});
+
