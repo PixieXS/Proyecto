@@ -28,6 +28,14 @@ body {
   /* Ocupa el espacio restante entre el header y el footer */
 }
 
+h2 {
+  padding: 10px 0;
+  text-align: center;
+}
+
+p {
+  text-align: center;
+}
 
 /* Header */
 header {
@@ -189,6 +197,9 @@ footer p {
   /* Animación aplicada */
 }
 
+textarea {
+  resize: none;
+}
 
 .programas h2::before,
 .programas h2::after {
@@ -257,24 +268,68 @@ footer p {
 }
 
 /* Tarjetas de contenido */
+
+.calendarioeventos h2 {
+  color: #000;
+  margin-top: 25px;
+  margin-bottom: 20px;
+  font-size: 1.9rem;
+}
+
+.titulocontribuir h2 {
+  color: #000;
+  margin-top: 25px;
+  margin-bottom: 10px;
+  font-size: 1.9rem;
+}
+
+.titulocontribuir p {
+  color: #000;
+  font-size: 1rem;
+  margin-bottom: 5px;
+}
+
+.ultimosarticulos h2  {
+  color: #000;
+  margin-top: 25px;
+  margin-bottom: 10px;
+  font-size: 1.9rem;
+}
+
 .card-container {
   display: flex;
   justify-content: center;
   align-items: flex-start;
   flex-wrap: wrap;
-  gap: 20px;
-  margin: 40px 0;
+  gap: 5px;
+  margin: 5px 0;
+}
+
+.card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.card ul li {
+  margin-bottom: 15px;
+  text-align: justify;
+}
+
+.card ul li strong {
+  color: #333;
+  font-size: 1.2rem;
 }
 
 .card {
   background-color: #ffffff;
-  padding: 30px;
+  padding: 10px;
   border-radius: 12px;
   box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
   text-align: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   border-left: 5px solid #1e5a8a;
-  margin: 20px 10px;
+  margin: 10px 15px;
   flex: 1 1 300px;
 }
 
@@ -290,11 +345,58 @@ footer p {
 }
 
 .card p {
-  color: #333;
+  color: #000;
   font-size: 1rem;
   line-height: 1.6;
 }
 
+.help-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  /* Espacio entre tarjetas */
+  justify-content: flex-end;
+  /* Alinea las tarjetas hacia la derecha */
+}
+
+.help-section .card {
+
+  margin: 20px;
+  /* Espacio entre tarjetas */
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.gallery-item {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.gallery-item img {
+  width: 100%;
+  height: auto;
+  border-bottom: 1px solid #ddd;
+}
+
+.gallery-item .description {
+  padding: 15px;
+  text-align: center;
+  background-color: #f9f9f9;
+  font-size: 1em;
+}
 
 /* Formulario */
 form {
@@ -450,44 +552,6 @@ form button:hover {
   background-color: #00509e;
 }
 
-/* Sección de Calendario */
-.calendar {
-  background-color: #fff;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.calendar h2 {
-  color: #005cbf;
-  text-align: center;
-  padding-bottom: 10px;
-}
-
-.events ul {
-  list-style: none;
-  padding: 0;
-}
-
-.events li {
-  padding: 10px;
-  margin-bottom: 8px;
-  background-color: #e3f2fd;
-  border-left: 4px solid #42a5f5;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.events li:hover {
-  background-color: #bbdefb;
-}
-
-.events li.highlight {
-  background-color: #ffeb3b;
-  border-left-color: #f57f17;
-}
-
-
 /* Sección de mapa */
 .map-container {
   margin-top: 30px;
@@ -499,7 +563,119 @@ form button:hover {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Sección de donaciones */
+
+/* Pagina De Donaciones */
+
+.impacto-organizacion {
+  background-color: #fff; 
+  border-radius: 8px; 
+  padding: 20px;
+  margin: 20px 50px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+  font-family: 'Arial', sans-serif;
+  opacity: 0;
+  transform: translateY(50px); 
+  animation: fadeInUp 1s ease forwards; 
+}
+
+@keyframes fadeInUp {
+  to {
+      opacity: 1;
+      transform: translateY(0); 
+  }
+}
+
+.impacto-organizacion h2 {
+  color: #000; 
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  text-align: center; 
+  opacity: 0;
+  animation: fadeIn 1.2s ease forwards;
+}
+
+@keyframes fadeIn {
+  to {
+      opacity: 1;
+  }
+}
+
+.impacto-organizacion p {
+  color: #000;
+  font-size: 1.1rem;
+  line-height: 1.5; 
+  margin-top: 10px;
+  margin-bottom: 15px;
+  text-align: justify; 
+  opacity: 0;
+  animation: fadeIn 1.5s ease forwards;
+}
+
+.impacto-organizacion ul {
+  list-style-type: disc; 
+  margin: 10px 0 20px 20px; 
+  opacity: 0;
+  animation: fadeIn 1.8s ease forwards;
+}
+
+.impacto-organizacion ul li {
+  color: #000;
+  font-size: 1.1em;
+  margin-bottom: 8px;
+}
+
+/* Estilo para el botón de donar con animaciones */
+.botondonar {
+  display: flex;
+  justify-content: center; 
+  margin-top: 20px;
+  opacity: 0;
+  animation: fadeIn 2s ease forwards;
+  margin-bottom: 50px;
+}
+
+.botondonar button {
+  background-color: #003366; 
+  color: white; 
+  border: none;
+  padding: 10px 40px;
+  font-size: 1.2em;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease; 
+  animation: bounceIn 1.5s ease forwards;
+}
+
+/* Animación de rebote para el botón */
+@keyframes bounceIn {
+  0% {
+      transform: scale(0.5);
+      opacity: 0;
+  }
+  60% {
+      transform: scale(1.2);
+      opacity: 1;
+  }
+  100% {
+      transform: scale(1);
+  }
+}
+
+.botondonar button:hover {
+  background-color: red; 
+  transform: scale(1.05); 
+}
+
+.botondonar button:active {
+  background-color: #004d6e; 
+  transform: scale(1); 
+}
+
+
+
+
+
+/* Estilo Modal De Donaciones */
 .donate {
   background-color: #171b24;
   width: 500px;
@@ -786,7 +962,7 @@ form button:hover {
 /* Título */
 .recent-news h3 {
   font-size: 28px;
-  color: #1A73E8;
+  color: #003366;
   font-weight: 600;
   margin-bottom: 20px;
   position: relative;
@@ -796,7 +972,7 @@ form button:hover {
 
 .recent-news h3::after {
   content: '';
-  width: 60px;
+  width: 80px;
   height: 4px;
   background-color: #1A73E8;
   position: absolute;
@@ -819,7 +995,7 @@ form button:hover {
 /* Estilo de cada item de la lista */
 .recent-news li {
   font-size: 16px;
-  color: #333;
+  color: #000;
   background-color: #ffffff;
   border-radius: 12px;
   padding: 15px 20px;
@@ -921,231 +1097,6 @@ form button:hover {
   animation-delay: 1.5s;
 }
 
-
-/* Sobre Nosotros ---> Titulo */
-
-.sobrenosotros {
-  background-color: #f9f9f9;
-  font-style: italic;
-  padding: 40px;
-  margin: auto;
-  border-radius: 15px;
-  margin-top: 20px;
-  max-width: 1200px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, background-color 0.3s ease;
-}
-
-.sobrenosotros:hover {
-  background-color: #ffffff;
-  transform: scale(1.02);
-}
-
-.sobrenosotros .info h2 {
-  text-align: center;
-  font-size: 2.5rem;
-  color: #003366;
-  margin-bottom: 40px;
-  position: relative;
-  opacity: 0;
-  animation: fadeInDown 0.5s forwards ease-in-out;
-}
-
-.sobrenosotros .info h3 {
-  text-align: justify;
-  font-size: 1rem;
-  color: #003366;
-  margin-top: 20px;
-  margin-bottom: 10px;
-  position: relative;
-  opacity: 0;
-  animation: fadeInDown 0.5s forwards ease-in-out;
-}
-
-@keyframes fadeInDown {
-  from {
-    opacity: 0;
-    transform: translateY(-20px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.sobrenosotros .info p {
-  text-align: justify;
-  margin-top: 15px;
-  font-size: 1.1rem;
-  color: #000;
-  opacity: 0;
-  animation: fadeInUp 0.6s forwards ease-in-out;
-}
-
-/* Animación para el texto */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-
-/* Sobre Nosotros ---> Mision y Vision */
-.informacion {
-  display: flex;
-  align-items: center center;
-  justify-content: space-between;
-  padding: 20px;
-  border-radius: 15px;
-  margin: auto;
-  max-width: 1000px;
-  gap: 30px;
-}
-
-.mision,
-.vision {
-  flex: 1;
-  background-color: #f9f9f9;
-  padding: 20px 20px 20px 40px;
-  border-left: 5px solid #003366;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: background-color 0.3s, transform 0.3s;
-  display: flex;
-  flex-direction: column;
-  position: relative;
-}
-
-.mision h2,
-.vision h2 {
-  color: #003366;
-  font-weight: bold;
-  font-size: 1.6em;
-  margin-bottom: 20px;
-  text-align: left;
-}
-
-.mision p,
-.vision p {
-  color: #333333;
-  font-size: 1.1em;
-  line-height: 1.8;
-  margin-bottom: 20px;
-}
-
-/* Solo colocar el círculo en el contenedor principal */
-.mision::before,
-.vision::before {
-  content: '';
-  position: absolute;
-  left: 5px;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 15px;
-  height: 15px;
-  background-color: #008ed4;
-  border-radius: 50%;
-  box-shadow: 0 0 4px #000000;
-  opacity: 0;
-  transition: opacity 0.3s, left 0.3s;
-}
-
-.mision:hover::before,
-.vision:hover::before {
-  left: 10px;
-  opacity: 1;
-}
-
-.mision:hover,
-.vision:hover {
-  background-color: #fff;
-  transform: translateX(10px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-}
-
-/* Ajustes responsive */
-@media (max-width: 768px) {
-  .informacion {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .mision,
-  .vision {
-    width: 100%;
-    max-width: 100%;
-  }
-}
-
-
-/* Historia */
-/* Estilos generales */
-section {
-  margin: 40px 0;
-  padding: 20px;
-}
-
-h2 {
-  font-size: 2em;
-  color: #003366;
-  margin-bottom: 20px;
-  text-align: center;
-}
-
-/* Sección Nuestra Historia */
-.nuestra-historia {
-  background-color: #f9f9f9;
-  padding: 40px;
-  margin: auto;
-  border-radius: 15px;
-  margin-top: 20px;
-  max-width: 1200px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, background-color 0.3s ease;
-}
-
-.historia p {
-  color: #000;
-  font-size: 1.2em;
-  line-height: 1.6;
-  margin-bottom: 20px;
-}
-
-.nuestra-historia .historia {
-  max-width: 800px;
-  margin: 0 auto;
-  text-align: justify;
-}
-
-.nuestra-historia .historia p:first-of-type {
-  margin-top: 0;
-}
-
-/* Ajustes para dispositivos móviles */
-@media (max-width: 768px) {
-  .nuestra-historia {
-    padding: 20px;
-  }
-
-  .historia p {
-    font-size: 1em;
-  }
-
-  .historia {
-    margin: 0;
-  }
-}
-
-/* Equipo */
-
-
 /* Responsividad para el mapa */
 @media (max-width: 768px) {
   .map-container iframe {
@@ -1158,11 +1109,13 @@ h2 {
 /* Responsividad */
 @media (max-width: 1200px) {
   .card-container {
-    gap: 10px;
+    gap: 15px;
+    /* Mayor espacio entre las tarjetas */
   }
 
   .card {
     flex: 1 1 45%;
+    /* Las tarjetas ocuparán el 45% del ancho del contenedor */
   }
 }
 
@@ -1217,13 +1170,24 @@ h2 {
     font-size: 1rem;
   }
 
-  /* Tarjetas de contenido */
+  /* Ajustes en el tamaño de las tarjetas */
   .card-container {
     gap: 20px;
+    /* Mayor separación entre las tarjetas */
   }
 
   .card {
     flex: 1 1 100%;
+  }
+
+  .card h3 {
+    font-size: 1.6rem;
+    /* Reduce el tamaño de los títulos */
+  }
+
+  .card p {
+    font-size: 0.95rem;
+    /* Tamaño más pequeño para el texto */
   }
 
   /* Formulario */
@@ -1239,17 +1203,40 @@ h2 {
 
   /* Contacto */
   .contact-container {
+    display: flex;
     flex-direction: column;
+    align-items: center;
+    padding: 20px;
   }
 
   .contact-info,
-  .contact-form {
-    flex: 1 1 100%;
+  .map-container {
+    width: 100%;
+    margin-bottom: 20px;
   }
 
   .contact-info h3,
   .contact-form label {
     font-size: 1.2rem;
+  }
+
+  .contact-form {
+    width: 100%;
+    padding: 0 10px;
+    gap: 15px;
+  }
+
+  .contact-form .form-group input,
+  .contact-form .form-group textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+  }
+
+  .contact-form .submit-button {
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
   }
 
   /* Sección de donaciones */
@@ -1312,27 +1299,41 @@ h2 {
     font-size: 0.9rem;
   }
 
-  /* Tarjetas de contenido */
+  /* Ajuste de tarjetas */
+  .card-container {
+    gap: 15px;
+    /* Espacio adecuado entre las tarjetas */
+  }
+
   .card {
     flex: 1 1 100%;
-    padding: 20px;
+    /* Las tarjetas ocuparán todo el ancho disponible */
+    padding: 15px;
+    /* Relleno mayor para mejor legibilidad */
   }
 
   .card h3 {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
+    /* Ajusta el tamaño del título */
   }
 
-  /* Footer */
-  footer {
+  .card p {
     font-size: 0.9rem;
-    padding: 15px 0;
+    /* Ajuste para el texto en pantallas más pequeñas */
   }
 
-  /* Formulario */
+  /* Ajuste del footer y formularios */
+  footer {
+    font-size: 0.8rem;
+    padding: 15px;
+  }
+
+  /* Formularios */
   form input,
   form textarea {
     padding: 10px;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
+    /* Ajuste del tamaño del texto en formularios */
   }
 
   .contact-form label {
@@ -1341,5 +1342,10 @@ h2 {
 
   .contact-info h3 {
     font-size: 1.2rem;
+  }
+
+  /* Mapa */
+  .map-container iframe {
+    height: 250px;
   }
 }

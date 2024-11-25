@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Manejo de la selección de las denominaciones predeterminadas
     const denominations = document.querySelectorAll('.denomination');
-    const donationButton = document.querySelector('button');
+    const donationButtonModal = document.querySelector('#donationModal .donate-submit button'); // Botón en el modal
     const otherInput = document.querySelector('.denomination-other input');
 
     denominations.forEach(function(denomination) {
@@ -56,8 +56,8 @@ document.addEventListener('DOMContentLoaded', function () {
             // Obtener el valor de la denominación seleccionada
             const selectedAmount = selectedRadio.value;
 
-            // Actualizar el texto del botón con el monto seleccionado
-            donationButton.textContent = 'Donar Lps.' + selectedAmount;
+            // Actualizar el texto del botón con el monto seleccionado en el modal
+            donationButtonModal.textContent = 'Donar Lps.' + selectedAmount;
         });
     });
 
@@ -79,86 +79,33 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // Actualizar el texto del botón con el valor ingresado en "Otro"
         if (value) {
-            donationButton.textContent = 'Donar Lps.' + value;
+            donationButtonModal.textContent = 'Donar Lps.' + value;
         } else {
-            donationButton.textContent = 'Donar Lps.'; // Si el campo está vacío, poner el texto por defecto
+            donationButtonModal.textContent = 'Donar Lps.'; // Si el campo está vacío, poner el texto por defecto
         }
     });
 });
-
 
 document.addEventListener('DOMContentLoaded', function() {
     const modal = document.getElementById("donationModal");
     const openModalBtn = document.getElementById("openDonationModal");
     const closeBtn = document.getElementsByClassName("close")[0];
-    const donationContent = document.getElementById("donation-content");
 
-    // Función para abrir el modal y cargar el contenido de la página de donar
+    // Abrir el modal
     openModalBtn.addEventListener("click", function(event) {
-        event.preventDefault();  // Prevenir la redirección al hacer clic en el enlace
-
-        // Cargar el contenido de la página de donaciones dentro del modal
-        fetch("donaciones")
-            .then(response => response.text())
-            .then(data => {
-                // Obtener el contenido de la página de donar y cargarlo en el modal
-                const content = data.match(/<div class="donate">.*?<\/div>/s);  // Extraer solo la sección relevante de la página
-                if (content) {
-                    donationContent.innerHTML = content[0];
-                }
-                modal.style.display = "block";  // Mostrar el modal
-            })
-            .catch(error => {
-                console.error("Error al cargar la página de donar:", error);
-            });
+        event.preventDefault();  // Evitar redirección
+        modal.style.display = "block";  // Mostrar el modal
     });
 
-    // Cerrar el modal cuando se hace clic en la 'X'
+    // Cerrar el modal al hacer clic en la 'X'
     closeBtn.addEventListener("click", function() {
         modal.style.display = "none";
     });
 
-    // Cerrar el modal si el usuario hace clic fuera del contenido del modal
+    // Cerrar el modal si se hace clic fuera del contenido del modal
     window.addEventListener("click", function(event) {
         if (event.target === modal) {
             modal.style.display = "none";
         }
     });
 });
-
-
-//CALENDARIO
-document.addEventListener("DOMContentLoaded", function () {
-    const events = document.querySelectorAll("#event-list li");
-    const today = new Date();
-
-    // Convertir la fecha en formato "AAAA-MM-DD" a un objeto Date
-    function getDateFromAttr(event) {
-        return new Date(event.getAttribute("data-date"));
-    }
-
-    // Encontrar el evento más cercano
-    let closestEvent = null;
-    let closestDateDiff = Infinity;
-
-    events.forEach(event => {
-        const eventDate = getDateFromAttr(event);
-        const dateDiff = eventDate - today;
-
-        if (dateDiff >= 0 && dateDiff < closestDateDiff) {
-            closestDateDiff = dateDiff;
-            closestEvent = event;
-        }
-
-        // Añadir el evento click para mostrar un mensaje
-        event.addEventListener("click", function () {
-            alert("Seleccionaste: " + event.textContent.trim());
-        });
-    });
-
-    // Resaltar el evento más cercano
-    if (closestEvent) {
-        closestEvent.classList.add("highlight");
-    }
-});
-
