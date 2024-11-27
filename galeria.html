@@ -3,13 +3,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Galería de Fotos - APP</title>
-    <link rel="stylesheet" href="estilos.css">
+    <link rel="stylesheet" href="css/estilos.css">
 </head>
 <body>
     
     <header>
         <div class="header-content">
-            <img src="logo.png" alt="Logo" class="logo">
+            <img src="imagenes/logo.png" alt="Logo" class="logo">
             <h1>Agua Para el Pueblo (APP)</h1>
         </div>
         <p>Transformando comunidades con sistemas de agua y saneamiento sostenible</p>
@@ -32,119 +32,22 @@
 
     <section class="gallery">
         <div class="gallery-item">
-            <img src="evento1.png" alt="Evento 1">
+            <img src="imagenes/evento1.png" alt="Evento 1">
             <p class="description">¡Seguimos trabajando para que más personas consuman AguaClara, segura y de alta calidad!
             </p>
         </div>
         <div class="gallery-item">
-            <img src="evento2.png" alt="Evento 2">
+            <img src="imagenes/evento2.png" alt="Evento 2">
             <p class="description">Firma de convenio con la Secretaría de Desarrollo Social SEDESOL para la construcción de una Planta</p>
         </div>
         <div class="gallery-item">
-            <img src="evento3.png" alt="Evento 3">
+            <img src="imagenes/evento3.png" alt="Evento 3">
             <p class="description">Visita de AguaClara Reach y Ohio State University
             </p>
         </div>
     </section>
-
-
-
-    <section>
-        <!-- Modal (Ventana Emergente) -->
-        <div id="donationModal" class="modal">
-            <div class="modal-content">
-                <span class="close">&times;</span>
-                <div id="donation-content">
-                    <div class="donate">
-                        <div class="donate-black">
-                            <h2><span>$</span>Unirte a la causa</h2>
-                            <p>Tu contribución es vital para el éxito de nuestra iniciativa.<br>Elige el monto que
-                                deseas donar con
-                                PayPal o con tu Tarjeta De Credito, ya sea como pago único o mensual.</p>
-                            </p>
-                        </div>
-                        <div class="donate-blue">
-                            <h3>Monto de la donación</h3>
-                            <div class="donate-amount-box">
-                                <div class="donate-amount">
-                                    <div class="denomination">
-                                        <input autocomplete="off" type="radio" name="amount" id="amount5" value="50">
-                                        <label for="amount50">Lps.50</label>
-                                    </div>
-                                    <div class="denomination">
-                                        <input autocomplete="off" type="radio" name="amount" id="amount100" value="100">
-                                        <label for="amount100">Lps.100</label>
-                                    </div>
-                                    <div class="denomination">
-                                        <input autocomplete="off" type="radio" name="amount" id="amount200" value="200">
-                                        <label for="amount200">Lps.200</label>
-                                    </div>
-                                    <div class="denomination">
-                                        <input autocomplete="off" type="radio" name="amount" id="amount250" value="250">
-                                        <label for="amount250">Lps.250</label>
-                                    </div>
-                                    <div class="denomination">
-                                        <input autocomplete="off" type="radio" name="amount" id="amount500" value="500">
-                                        <label for="amount500">Lps.500</label>
-                                    </div>
-                                    <div class="denomination">
-                                        <input autocomplete="off" type="radio" name="amount" id="amount1000"
-                                            value="1000">
-                                        <label for="amount1000">Lps.1000</label>
-                                    </div>
-                                </div>
-                                <div class="denomination-other">
-                                    <input autocomplete="off" type="text" name="amount" value=""
-                                        placeholder="Ingrese Otra Cantidad">
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="donate-black donate-type">
-                            <h3>Tipo de donación</h3>
-                            <div class="radio">
-                                <input id="radio-1" name="donation" type="radio" checked name="donation_type"
-                                    value="single">
-                                <label for="radio-1" class="radio-label">Única vez</label>
-                                <input id="radio-2" name="donation" type="radio" name="donation_type" value="recurring">
-                                <label for="radio-2" class="radio-label">Mensual</label>
-                            </div>
-                        </div>
-
-                        <div class="donate-blue donate-payment">
-                            <h3>Método de pago</h3>
-                            <div class="radio">
-                                <input id="radio-3" name="payment" type="radio" checked value="paypal">
-                                <label for="radio-3" class="radio-label">PayPal</label>
-                                <input id="radio-4" name="payment" type="radio" value="credit_card">
-                                <label for="radio-4" class="radio-label">Tarjeta De Credito</label>
-                            </div>
-
-                            <div id="credit-card-info" style="display:none;">
-                                <h3>Ingresa los datos de tu tarjeta de crédito</h3>
-                                <input type="text" placeholder="Número de tarjeta" id="card-number">
-                                <input type="text" placeholder="Nombre del titular" id="card-holder">
-                                <input type="text" placeholder="Fecha de expiración (MM/AA)" id="card-expiry">
-                                <input type="text" placeholder="CVV" id="card-cvv">
-                            </div>
-
-                            <div class="donate-submit">
-                                <button type="submit" autocomplete="off">Contribuir</button>
-                                <p><small>Por favor ten en cuenta que las contribuciones no son deducibles de
-                                        impuestose.</small></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    
     <footer>
         <p>© 2024 Agua Para el Pueblo. Todos los derechos reservados.</p>
     </footer>
-
-    <script src="script.js"></script>
 </body>
 </html>
