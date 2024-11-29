@@ -82,15 +82,11 @@ header {
 
 .main-nav ul li a.active {
   color: white;
-  /* Texto blanco */
   font-weight: bold;
-  /* Texto en negrita */
   border-radius: 4px;
-  /* Bordes redondeados */
   text-decoration: none;
-  /* Sin subrayado */
   padding: 5px 10px;
-  /* Espacio alrededor del texto */
+
 }
 
 .main-nav ul li a {
@@ -1099,15 +1095,71 @@ form button:hover {
   animation-delay: 1.4s;
 }
 
-.recent-news li:nth-child(15) {
-  animation-delay: 1.5s;
+.menu-toggle {
+  display: none; /* Oculto por defecto, se mostrará en las pantallas pequeñas */
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  background-color: #003366;
+  padding: 5px;
+  width: 45px; /* Ancho del botón */
+  height: 25px; /* Alto total del ícono */
+  margin-top: 10px;
+  z-index: 1000;
 }
 
+.menu-toggle div {
+  background-color: white; /* Color de las líneas */
+  height: 4px; /* Grosor de las líneas */
+  border-radius: 2px; /* Líneas con bordes redondeados */
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
 
-
-/* Responsividad para el mapa */
+/*Tableta*/
 @media (max-width: 768px) {
 
+   .menu-toggle {
+    display: flex;
+  }
+
+  /* Menú desplegable */
+  .main-nav ul {
+    z-index: 1000;
+    display: none;
+    flex-direction: column;
+    padding: 0;
+    margin: 0;
+    background-color: #003366;
+    position: absolute;
+    top: 200px;
+    left: 0;
+    width: 50%;
+    max-height: 100vh;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow-y: auto;
+    transition: max-height 0.3s ease-in-out;
+  }
+
+  .main-nav ul.show {
+    display: flex;
+  }
+
+  .main-nav ul li a {
+    text-align: left;
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 15px 10px;
+    font-size: 1.1rem;
+    width: 100%;
+  }
+
+  .main-nav ul li a:hover {
+    background-color: #1e5a8a;
+  }
+  .main-nav ul {
+    width: 50%;
+  }
   .map-container iframe {
     width: 100%;
     height: 300px;
@@ -1288,9 +1340,41 @@ form button:hover {
 
 }
 
-/* Responsividad para pantallas más pequeñas (max-width: 480px) */
+/* Movil */
 @media (max-width: 480px) {
+.menu-toggle {
+    display: flex;
+  }
 
+  /* Menú desplegable */
+  .main-nav ul {
+    display: none;
+    flex-direction: column;
+    padding: 0;
+    margin: 0;
+    background-color: #003366;
+    position: absolute;
+    top: 240px;
+    width: 50%;
+    max-height: 100vh;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow-y: auto;
+    transition: max-height 0.3s ease-in-out;
+  }
+
+  .main-nav ul.show {
+    display: flex;
+  }
+
+  .main-nav ul li a {
+    text-align: left;
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 10px 5px;
+    font-size: 0.9rem;
+    width: 100%;
+  }
   /* Hero Section */
   .hero {
     height: 40vh;

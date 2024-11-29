@@ -96,3 +96,10 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+const menuToggle = document.getElementById('mobile-menu');
+const navMenu = document.querySelector('.main-nav ul');
+
+menuToggle.addEventListener('click', () => {
+    menuToggle.classList.toggle('active'); // Cambia la apariencia del botón
+    navMenu.classList.toggle('show'); // Muestra u oculta el menú
+});
